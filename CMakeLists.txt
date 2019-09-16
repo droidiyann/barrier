@@ -21,6 +21,7 @@ project (barrier C CXX)
 option (BARRIER_BUILD_GUI "Build the GUI" ON)
 option (BARRIER_BUILD_INSTALLER "Build the installer" ON)
 
+set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set (CMAKE_CXX_STANDARD 14)
 set (CMAKE_CXX_EXTENSIONS OFF)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -52,7 +53,7 @@ include_directories (BEFORE SYSTEM ./ext/gtest/include)
 
 if (UNIX)
     if (NOT APPLE)
-        set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+        set (CMAKE_POSITION_INDEPENDENT_CODE TRUE)
     endif()
 
     # For config.h, detect the libraries, functions, etc.
@@ -347,6 +348,12 @@ else()
     endif()
     set (OPENSSL_LIBS ${lib_ssl} ${lib_crypto})
 endif()
+
+
+# Check we have the *required* Qt5 libs.
+find_package(Qt5Core REQUIRED)
+find_package(Qt5Network REQUIRED)
+find_package(Qt5Widgets REQUIRED)
 
 #
 # Configure_file... but for directories, recursively.

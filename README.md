@@ -1,8 +1,24 @@
 # Barrier
 
-Eliminate the barrier between your machines.
+Eliminate the barrier between your machines. 
+Find [releases for windows and macOS here](https://github.com/debauchee/barrier/releases).
+Your distro probably already has barrier packaged for it, see [distro specific packages](#distro-specific-packages)
+below for a list. Alternatively, we also provide a [flatpak](https://github.com/flathub/com.github.debauchee.barrier).
 
-Master branch build status: &nbsp; [![Build Status](https://travis-ci.org/debauchee/barrier.svg?branch=master)](https://travis-ci.org/debauchee/barrier)
+### Contact info:
+
+- `#barrier` on freenode
+
+#### CI Build Status
+
+Master branch overall build status: [![Build Status](https://dev.azure.com/debauchee/Barrier/_apis/build/status/debauchee.barrier?branchName=master)](https://dev.azure.com/debauchee/Barrier/_build/latest?definitionId=1&branchName=master)
+* Linux Build Status: [![Build Status](https://dev.azure.com/debauchee/Barrier/_apis/build/status/debauchee.barrier?branchName=master&jobName=Linux%20Build)](https://dev.azure.com/debauchee/Barrier/_build/latest?definitionId=1&branchName=master)
+* Mac Build Status: [![Build Status](https://dev.azure.com/debauchee/Barrier/_apis/build/status/debauchee.barrier?branchName=master&jobName=Mac%20Build)](https://dev.azure.com/debauchee/Barrier/_build/latest?definitionId=1&branchName=master)
+* Windows Debug Build Status: [![Build Status](https://dev.azure.com/debauchee/Barrier/_apis/build/status/debauchee.barrier?branchName=master&jobName=Windows%20Build&configuration=Windows%20Build%20Debug)](https://dev.azure.com/debauchee/Barrier/_build/latest?definitionId=1&branchName=master)
+* Windows Release Build Status: [![Build Status](https://dev.azure.com/debauchee/Barrier/_apis/build/status/debauchee.barrier?branchName=master&jobName=Windows%20Build&configuration=Windows%20Build%20Release%20with%20Release%20Installer)](https://dev.azure.com/debauchee/Barrier/_build/latest?definitionId=1&branchName=master)
+* Snap: [![Snap Status](https://build.snapcraft.io/badge/debauchee/barrier.svg)](https://build.snapcraft.io/user/debauchee/barrier)
+
+Our CI Builds are provided by Microsoft Azure Pipelines, Flathub, and Canonical.
 
 ### What is it?
 
@@ -29,3 +45,28 @@ For short and simple questions or to just say hello find us on the Freenode IRC 
 ### Contributions
 
 At this time we are looking for developers to help fix the issues found in the issue tracker. Submit pull requests once you've polished up your patch and we'll review and possibly merge it.
+
+## Distro specific packages
+
+While not a comprehensive list, repology provides a decent list of distro
+specific packages.
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/barrier.svg)](https://repology.org/project/barrier/versions)
+
+### FAQ
+
+Q: Does drag and drop work on linux?
+
+A: No
+
+Q: What OSes are supported?
+
+A:
+  - Windows 7, 8, 8.1, and 10
+  - MacOS/OS X
+  - Linux
+  - FreeBSD
+
+Q: Are 32-bit versions of Windows supported?
+
+A: No

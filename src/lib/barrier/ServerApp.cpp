@@ -302,8 +302,8 @@ void
 ServerApp::stopRetryTimer()
 {
     if (m_timer != NULL) {
+        m_events->removeHandler(Event::kTimer, m_timer);
         m_events->deleteTimer(m_timer);
-        m_events->removeHandler(Event::kTimer, NULL);
         m_timer = NULL;
     }
 }
@@ -713,8 +713,7 @@ ServerApp::mainLoop()
 {
     // create socket multiplexer.  this must happen after daemonization
     // on unix because threads evaporate across a fork().
-    SocketMultiplexer multiplexer;
-    setSocketMultiplexer(&multiplexer);
+    setSocketMultiplexer(std::make_unique<SocketMultiplexer>());
 
     // if configuration has no screens then add this system
     // as the default
